@@ -1,8 +1,11 @@
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+const URL = process.env.MONGO_URL;
 
 // Connect to the database
-mongoose.connect("mongodb://localhost:27017/todo");
+mongoose.connect(URL);
 
 // Create a schema
 const todoSchema = new mongoose.Schema({
